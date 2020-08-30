@@ -4,16 +4,6 @@ var User=require('../data/account')
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var jwt = require('jsonwebtoken');
-var session = require('express-session')
-
-//Set session
-
-router.use(session({
-  secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: true,
-  cookie: { secure: false, maxAge: 600000 }
-}))
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -61,7 +51,8 @@ router.get('/logout', function (req, res) {
 function checkAuth(req, res, next) {
   var token = req.session.token;
   console.log(token);
-  try {
+try {
+    console.log(token);
     var result = jwt.verify(token, 'mk');
     next()  
   } catch (error) {
