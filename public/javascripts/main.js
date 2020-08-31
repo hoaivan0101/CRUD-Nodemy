@@ -1,3 +1,5 @@
+// GET DATA
+
 $.ajax({
     url: '/main/todo',
     type: 'GET'
@@ -13,6 +15,8 @@ $.ajax({
         Edit();
 
     })
+
+// POST DATA
 
 $('.add__btn').click(function () {
     var value = $('#title').val();
@@ -35,17 +39,19 @@ $('.add__btn').click(function () {
     }
 })
 
+// function add_data after post
 
 function Add_data(data) {
     $('.content__main').append(`<div class="content__main-item" id="${data._id}">
                 <input class="content__main-input hidden" placeholder="${data.title}" name="title">
                 <button class="confirm_btn hidden">Confirm</button>
-                <span>Title: ${data.title}</span>
-                <span class="delete_btn"><i class="far fa-trash-alt"></i></span>
+                <span class="content__main-title">* ${data.title}</span>
                 <span class="edit_btn"><i class="far fa-edit"></i></span>
+                <span class="delete_btn"><i class="far fa-trash-alt"></i></span>
                 </div>`)
 }
 
+//  function Delete Data following Id
 function DeleteId(id) {
     $.ajax({
         url: '/main/todo/' + id,
@@ -57,6 +63,7 @@ function DeleteId(id) {
         })
 }
 
+// function Edit Data following Id
 function Edit() {
     $('.edit_btn').click(function () {
         if ($(this).siblings('input').hasClass('hidden')) {
@@ -72,19 +79,22 @@ function Edit() {
 
     $('.confirm_btn').click(function () {
         var id = $(this).parent().attr('id')
-        var content = $(this).siblings('input').val()
-        $.ajax({
-            url: '/main/todo/' + id,
-            type: 'PUT',
-            data: {
-                title: content,
-            }
-        })
-            .then(data => {
-                $(this).siblings('span:first').html(`Title:${content}`);
-                $(this).siblings('span:first').removeClass('hidden');
-                $(this).siblings('input').addClass('hidden')
-                $(this).addClass('hidden')
+        var content = $(this).siblings('input').val();
+        if (content === '') { alert('Not information to update') }
+        else {
+            $.ajax({
+                url: '/main/todo/' + id,
+                type: 'PUT',
+                data: {
+                    title: content,
+                }
             })
+                .then(data => {
+                    $(this).siblings('span:first').html(`* ${content}`);
+                    $(this).siblings('span:first').removeClass('hidden');
+                    $(this).siblings('input').addClass('hidden')
+                    $(this).addClass('hidden')
+                })
+        }
     })
 }
