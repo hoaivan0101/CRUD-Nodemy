@@ -7,7 +7,7 @@ router.get('/', function (req, res) {
     res.render('main')
 })
 
-router.get('/todo', function (req, res) {
+router.get('/todo',  function (req, res) {
     console.log(req.user);
     todoJob.find()
         .then(data => {
@@ -18,7 +18,7 @@ router.get('/todo', function (req, res) {
     })
 })
 
-router.post('/todo',function (req, res) {
+router.post('/todo', function (req, res) {
     todoJob.create({
         title: req.body.title,
         username:req.user,

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../public/stylesheets/GRID.css">
     <link rel="stylesheet" href="../public/stylesheets/style.css">
+    <script
+        src="../public/stylesheets/css fontawesome/fontawesome-free-5.13.0-web/fontawesome-free-5.13.0-web/js/all.js"></script>
     <script src="../public/javascripts/jquery-3.5.1.min.js"></script>
     <title>Main</title>
 </head>
@@ -47,33 +49,6 @@
     </div>
 </body>
 
-<script>
-    $.ajax({
-        url: '/main/todo',
-        type: 'GET'
-    })
-        .then(data => {
-            for (let i of data) {
-                $('.content__main').append(`<div class="content__main-item">Title: ${i.title}</div>`)
-            }
-        })
-
-    $('.add__btn').click(function () {
-        var value = $('#title').val();
-        if (value === '') { alert('Not Job to add') } else {
-            $.ajax({
-                url: '/main/todo',
-                type: 'POST',
-                data: {
-                    title: value
-                }
-            })
-                .then(data => {
-                    $('.content__main').append(`<div>Title: ${data.title}</div>`)
-                })
-        }
-    })
-
-</script>
+<script src="../public/javascripts/main.js"></script>
 
 </html>
