@@ -12,7 +12,7 @@ $('.btn_login').click(function () {
       .then(data => {
         if (data == 'Fail') { window.location.href = '/user'; }
         else {
-          window.location.href ='/user/private'
+          window.location.href ='/main'
         }
       })
       .catch(err => {
