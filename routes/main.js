@@ -3,8 +3,8 @@ var router = express.Router();
 var todoJob = require('../data/listjob')
 var checkAuth = require('../controller/checkAuth')
 
-router.get('/', function (req, res) {
-    res.render('main')
+router.get('/', checkAuth, function (req, res) {
+    res.render('main',{user:req.user})
 })
 
 router.get('/todo',  function (req, res) {
