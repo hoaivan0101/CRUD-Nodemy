@@ -3,19 +3,87 @@
 
 <head>
   <title>CRUD</title>
-  <link rel='stylesheet' href='../public/stylesheets/style.css' />
   <link rel="stylesheet" href="../public/stylesheets/bootstrap-4.5.0-dist/css/bootstrap.css">
-  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+  <link rel="stylesheet" href="../public/stylesheets/header.css">
+  <script
+    src="../public/stylesheets/css fontawesome/fontawesome-free-5.13.0-web/fontawesome-free-5.13.0-web/js/all.js"></script>
   <script src="../public/javascripts/jquery-3.5.1.min.js"></script>
+  <link rel="stylesheet" href="../public/stylesheets/GRID.css">
+  <link rel="stylesheet" href="../public/stylesheets/main_responsive.css">
+  <style>
+    .main__top {
+      font-size: 2.5rem;
+    }
+
+    a {
+      height: 40px;
+      margin-top: 10px;
+    }
+
+    .btn {
+      font-size: 1.8rem;
+    }
+
+    .main_bottom {
+      width: 50%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width:740px) {
+
+      .jumbotron {
+        width: 95%;
+      }
+
+      .btn {
+        font-size: 2.5rem;
+      }
+
+      .main_bottom {
+        width: 90%;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="jumbotron text-center">
-      <h1><span class="fa fa-lock"></span> Node Authentication</h1>
-      <p>Login or Register with:</p>
-      <a href="/user" class="btn btn-light"><span class="fa fa-user"></span> Local Login</a>
-      <a href="/signup" class="btn btn-light"><span class="fa fa-user"></span> Local Signup</a>
+  <div class="app">
+    <header class="header">
+      <div class="grid wide">
+        <div class="row">
+          <div class="col l-4 m-0 c-0">
+            <div class="header__image" href="/">
+              <p class="header__image--text">Nodemy - Khóa Online I</p>
+            </div>
+          </div>
+          <div class="col l-4 m-6 c-12">
+            <p class="header__center">TO<span style="color:red">DO</span>LIST</p>
+          </div>
+          <div class="col l-4 m-6 c-0">
+            <div class="header__user">
+              <a href="./user" class="header__user--link"><i class="far fa-user"></i>Log In</a>
+              <a href="./user/logout" class="header__user--link"><i class="fas fa-sign-out-alt"></i>Log
+                out</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </header>
+    <!--  -->
+    <div class="main">
+      <div class="jumbotron text-center">
+        <div class="main__top"><span class="fa fa-lock"></span> Node Authentication</div>
+        <p><strong>Login or Create Account:</strong></p>
+        <div class="main_bottom">
+          <a href="/user" class="btn btn-light"><span class="fa fa-user"></span> Local Login</a>
+          <a href="/signup" class="btn btn-light"><span class="fa fa-user"></span> Local Signup</a>
+        </div>
+      </div>
     </div>
   </div>
 </body>

@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 router.post('/', function (req, res) {
     User.create(req.body)
         .then(data => {
-            res.json(data);
+            res.redirect('/user');
         })
         .catch(err => {
         res.redirect('/signup')

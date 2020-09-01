@@ -96,6 +96,7 @@ p{
   display:flex;
   align-items: center;
   justify-content: flex-end;
+  height: 100%;
 }
 
 .header__user svg{
@@ -122,121 +123,18 @@ p{
   color:rgb(180, 36, 36);
 }
 
-/* body */
-
-.hidden{
-  display: none;
-}
 
 .main{
   height: calc(100% - 100px);
-  background:url(../images/Black-Panther-Wallpaper-Background.jfif);
+  background:url(../images/—Pngtree—network\ information\ electronic\ technology\ background_1096792.jpg);
   background-size: cover;
+  background-repeat: repeat;
   position: relative;
 }
 
-.content{
-  position: fixed;
+.jumbotron{
+  margin-top:10%;
+  background:rgba(255, 255, 255, 0.6);
   width: 60%;
-  top:30%;
-  left: 20%;
-  background: rgba(239, 246, 255, 0.95);
-  border-radius: 8px;
-  padding-top:10px;
-  padding-bottom: 10px;
-}
-
-.content__header{
-  /* background:red; */
-  text-align: center;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-
-}
-
-.input{
-  font-family: 'Alata', sans-serif;
-  font-size: 1.5rem;
-  border-radius: 5px 0 0 5px;
-  border:none;
-  width: 80%;
-  padding-left: 25px;
-  height: 50px;
-}
-
-input:target{
-  border:1px solid red;
-}
-
-.add__btn{
-  margin: 0;
-  width:10%;
-  height: 50px;
-  font-family: 'Alata', sans-serif;
-  font-size: 1.5rem;
-  border-radius:0 5px 5px 0;
-  background:rgba(241, 50, 50, 0.9);
-}
-
-.add__btn:hover{color:white}
-
-
-/* TITLE */
-
-.content__title{
-  text-align: center;
-  font-size: 1.5rem;
-}
-
-/* MAIN */
-
-.content__main{
-  margin-left: 20px;
-}
-
-.content__main-item{
-  border: 1px solid;
-  border-radius: 5px 0 5px 0;
-  width: 95%;
-  min-height: 40px;
-  margin-bottom: 5px;
-  margin-right:auto;
-  display:flex;
-  align-items: center;
-  padding-left: 2px;
-  /* background: linear-gradient(rgba(36, 112, 199, 0.3),rgba(26, 18, 92, 0.3)); */
-}
-
-.delete_btn, .edit_btn{
-  margin-right:5px;
-  font-size: 1.9rem;
-  /* color: white; */
-}
-
-.delete_btn:hover,.edit_btn:hover{
-  cursor: pointer;
-  color: rgb(107, 19, 19);
-}
-
-.edit_btn{
-    margin-left: auto;
-}
-
-
-.content__main-input{
-  font-family: 'Alata', sans-serif;
-  font-size: 1.5rem;
-  border-radius: 5px 0 0 5px;
-  border:none;
-  width: 80%;
-  min-height: 40px;
-  padding-left: 10px;
-}
-
-.confirm_btn{
-  border-radius: 3px;
-  font-weight: bold;
-  background:rgba(236, 7, 7, 0.651);
-  height: 30px;
+  margin: 10% auto;
 }
