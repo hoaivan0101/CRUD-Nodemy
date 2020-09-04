@@ -13,6 +13,28 @@ body {
     display: none;
 }
 
+label{
+    width: 100px;
+}
+
+#username{
+    width: 250px;
+}
+
+#selectList{
+    width: 250px;
+    margin-top:10px;
+    height: 28px;
+}
+
+.join_btn{
+    width: 100%;
+    margin: 0px;
+    margin-top: 30px;
+    background:rgba(255, 255, 255, 0.5);
+    height: 30px;
+}
+
 .room {
     z-index: 99;
     position: fixed;
@@ -58,7 +80,7 @@ body {
 }
 
 #submittext input {
-    width: 80%;
+    width: 90%;
 }
 
 #submittext button {
@@ -68,7 +90,6 @@ body {
 
 @media (max-width:740px){
     .jumbotron {
-        width: 50%;
         margin-left: 8%;
     }
 }
