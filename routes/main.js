@@ -7,7 +7,7 @@ router.get('/', checkAuth, function (req, res) {
     res.render('main',{user:req.user})
 })
 
-router.get('/todo',  function (req, res) {
+router.get('/todo',  checkAuth,function (req, res) {
     console.log(req.user);
     todoJob.find()
         .then(data => {
@@ -18,7 +18,7 @@ router.get('/todo',  function (req, res) {
     })
 })
 
-router.post('/todo', function (req, res) {
+router.post('/todo', checkAuth,function (req, res) {
     todoJob.create({
         title: req.body.title,
         username:req.user,
@@ -31,7 +31,7 @@ router.post('/todo', function (req, res) {
         })
 })
 
-router.put('/todo/:id', function (req, res) {
+router.put('/todo/:id', checkAuth,function (req, res) {
     todoJob.updateOne({
         _id:req.params.id
     }, {
@@ -45,7 +45,7 @@ router.put('/todo/:id', function (req, res) {
         })
 })
 
-router.delete('/todo/:id', function (req, res) {
+router.delete('/todo/:id', checkAuth, function (req, res) {
     todoJob.deleteOne({ _id: req.params.id })
         .then(data => {
             res.json(data)

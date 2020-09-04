@@ -32,6 +32,10 @@
       flex-wrap: wrap;
     }
 
+    .jumbotron {
+      margin: 5% auto;
+    }
+
     @media (max-width:740px) {
 
       .jumbotron {
@@ -77,11 +81,18 @@
     <!--  -->
     <div class="main">
       <div class="jumbotron text-center">
-        <div class="main__top"><span class="fa fa-lock"></span> Node Authentication</div>
+        <div class="main__top"><span class="fa fa-lock"></span> Node Authentication to TODOLIST</div>
         <p><strong>Login or Create Account:</strong></p>
         <div class="main_bottom">
           <a href="/user" class="btn btn-light"><span class="fa fa-user"></span> Local Login</a>
           <a href="/signup" class="btn btn-light"><span class="fa fa-user"></span> Local Signup</a>
+        </div>
+      </div>
+      <div class="jumbotron text-center">
+        <div class="main__top"><span class="fa fa-lock"></span> SWITCH TO CHAT WITH SOCKET_IO</div>
+        <p><strong>Join Room and begin messaging with Socket_Io</strong></p>
+        <div class="main_bottom">
+          <a href="/chat" class="btn btn-light"><span class="fa fa-user"></span> Chat - Socket_IO</a>
         </div>
       </div>
     </div>
